@@ -55,6 +55,8 @@ def Create_queue():
     Queue_name = request.args.get('Q')
     try:
         Q[Queue_name] = Queue()
+        statistic[Queue_name] = {}
+        statistic[Queue_name]["count_mes"] = 0
         return jsonify("Succes")
     except:
         return jsonify("failed")
